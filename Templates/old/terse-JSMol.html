@@ -1,0 +1,35 @@
+<HTML>
+    <HEAD>
+        <TITLE>
+            Terse results of electronic structure calculations
+        </TITLE>
+        <META http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmoljQuery.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmolCore.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmolApplet.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmolApi.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmolThree.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmolGLmol.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/j2sjmol.js"></script>
+        <script type="text/javascript" src="%(JSMolPath)s/jsmol/js/JSmol.js"></script>
+        <script type="text/javascript">
+        var JmolApplet0;
+        var Info = {
+          width: %(JMolWinX)s,
+          height: %(JMolWinY)s,
+          jarPath: 'jsmol',
+          jarFile: "JmolApplet.jar",
+          use: "HTML5",
+          j2sPath: "%(JSMolPath)s/jsmol/j2s",
+          console: "jmolApplet0_infodiv",
+          debug: true
+        }
+        </script>
+    </HEAD>
+    <BODY link="black">
+        <p><h3>%(timestamp)s</h3></p>
+        <TABLE border="1" cellspacing="0" cellpadding="4">
+        %(TableBody)s
+        </TABLE>
+    </BODY>
+</HTML>

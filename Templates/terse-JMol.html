@@ -1,0 +1,19 @@
+<HTML>
+    <HEAD>
+        <TITLE>
+            Terse results of electronic structure calculations
+        </TITLE>
+        <META http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+        <SCRIPT Src="%(JMolPath)sJmol.js"></SCRIPT>'
+    </HEAD>
+    <BODY link="black">
+        <SCRIPT>
+            jmolInitialize("%(JMolPath)s");
+            jmolCheckBrowser("popup", "./browsercheck", "onClick");
+        </SCRIPT>
+        <p><h3>%(timestamp)s</h3></p>
+        <TABLE border="1" cellspacing="0" cellpadding="4">
+        %(TableBody)s
+        </TABLE>
+    </BODY>
+</HTML>

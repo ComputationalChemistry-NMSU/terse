@@ -1,0 +1,108 @@
+#
+# To install terse.pl:
+#   0. Install Jmol (just download and unpack it in some folder)
+#   1. Copy terse.pl to one of the $PATH folder, e.g. ~/bin
+#   2. Copy configuration file to ~/.terse.rc
+#   3. Modify configuration file ~/.terse.rc (The most important option are OutputFolder and JmolPath)
+#   4. Install gnuplot (if not already installed) and add it's location to $PATH 
+#
+#
+# If terse.pl is used without Web server, 
+# terse.html and terse-pics should be placed in the Jmol subfolder to avoid Java Machine restrictions.
+# One of the ways to organize file system is:
+#
+# LocalFolder
+#           L Jmol
+#                L Results
+#                        L terse.html
+#                        L terse-pics
+#                                   L *.{xyz,png,...}
+# 
+# In this case, 
+#        OutputFolder = LocalFolder/Jmol/Results
+#        JmolPath     = ../
+#
+
+#
+# For web publication, file system can be organized in different way:
+#
+# $HOME/Sites
+#           L Jmol
+#           L terse.html
+#           L terse-pics
+#                      L *.{xyz,png,...}
+# 
+# In this case, 
+#        OutputFolder = $HOME/Sites
+#        JmolPath     = ./Jmol/
+#
+# (put real folder name instead of $HOME!)
+#
+
+
+# --------------------- Main options -----------------
+#
+# Output Folder
+#
+# OutputFolder = /Users/talipovmr/workflow/terse/Jmol/Results
+#OutputFolder = /Users/talipovmr/Sites
+OutputFolder = $HOME/Sites
+
+#
+# Relative path to Jmol
+#
+# JmolPath = ../
+JmolPath = ./Jmol/
+
+
+# JSMol on remote machine or local
+# Remote path "http://comp.chem.mu.edu" is default
+# If JSMolLocation uncommented here then place jsmol directory in Webserver path 
+#JSMolLocation = ''  
+#
+#
+# Size of the Jmol window
+#
+JmolWinX = 600
+JmolWinY = 400
+
+#
+# JMol's options
+#
+JavaOptions=vector ON; vector SCALE 3; set animationFPS 50; animation mode LOOP ; set language 'en_US'; set measurementUnits pm; set measureAllModels ON; wireframe 20 ; spacefill 40
+#JavaOptions=vector ON; vector SCALE 3; set animationFPS 10; animation mode LOOP ; set language 'en_US'; set measurementUnits pm; set measureAllModels ON; wireframe 20 ; spacefill 40; select _He ; connect delete
+#JavaOptions=vector ON; vector SCALE 3; set animationFPS 50; animation mode LOOP ; set language 'en_US'; set measurementUnits pm; set measureAllModels ON; wireframe 20 ; spacefill 40; color background white; set bondRadiusMilliAngstroms 80;  color bonds black
+EnergyUnits = kcal/mol
+EnergyFactor = 627.5
+
+#EnergyUnits = kJ/mol
+#EnergyFactor = 2625.5
+
+Gaussian_extension = log,out
+FchkGaussian_extension = fchk
+ChkGaussian_extension = chk
+Cube_extension = cube
+Gamess_extension = gms,gam
+XYZ_extension = xyz
+NBO_extension = nbout
+
+# --------------------- Other options -----------------
+#
+# Path to Gnuplot.
+# You might want to modify it if Gnuplot location is not included in $PATH
+#
+PathToGnuplot = gnuplot
+
+formchk = formchk
+cubegen = cubegen
+
+#
+# Unsupported options
+#
+ShowFrontierOrbitals = 0
+# Create archive = {yes, no}
+ArchiveResults = no
+
+ircgrad = 0
+ircgrad = 1
+savecubes = 1
