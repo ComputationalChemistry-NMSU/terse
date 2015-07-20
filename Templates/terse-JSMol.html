@@ -4,24 +4,40 @@
             Terse results of electronic structure calculations
         </TITLE>
         <META http-equiv="Content-Type" content="text/html; Charset=UTF-8">
-        <script type="text/javascript" src="jsmol/JSmol.min.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmoljQuery.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolCore.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolApplet.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolApi.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolThree.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolGLmol.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/j2sjmol.js"></script>
+        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmol.js"></script>
+     	<script src="http://code.jquery.com/jquery-1.11.4.js"></script>
+      	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="terse.css" />
         <script type="text/javascript">
+         $(function() {
+            $( "#left_panel" ).resizable({
+				aspectRatio: true
+			});
+         });
         var JmolApplet0;
         var Info = {
-          width: %(JMolWinX)s,
-          height: %(JMolWinY)s,
+          width: '%(JMolWinX)s',
+          height: '%(JMolWinY)s',
+          jarPath: 'jsmol',
           jarFile: "JmolApplet.jar",
-          serverURL: "http://134.48.45.11/jsmol-14.1.2/jsmol/php/jsmol.php",
           use: "HTML5",
-          j2sPath: "jsmol/j2s"
+          j2sPath: "http://comp.chem.mu.edu/jsmol/j2s",
+          console: "jmolApplet0_infodiv",
+          debug: true
         }
         </script>
     </HEAD>
     <BODY link="black">
         <p><h3>%(timestamp)s</h3></p>
-        <TABLE border="1" cellspacing="0" cellpadding="4">
-        %(TableBody)s
-        </TABLE>
+        %(pageBody)s
     </BODY>
 </HTML>
 

@@ -6,7 +6,7 @@ log = logging.getLogger(__name__)
 class HTML(Top):
     def __init__(self):
         self.s = ''
-        self.tableBody = ''
+        self.pageBody = ''
 
 
     def __str__(self):
@@ -18,12 +18,23 @@ class HTML(Top):
             fname = '%sTemplates/terse-%s.html' % (self.settings.selfPath,self.settings.Engine3D.__name__)
         self.s = open(fname).read()
 
+    def addLeftDiv(self,*args):
+        left_panel = ''
+        for a in args:
+            left_panel += web.tag(a,'div',"id='left_panel'")+'\n'
+        return left_panel
 
-    def addTableRow(self,*args):
+    def addRightDiv(self,*args):
+        right_panel = ''
+        for a in args:
+            right_panel += web.tag(a,'div',"id='right_panel'")+'\n'
+        return right_panel
+
+    def addDivRowWrapper(self,*args):
         row = ''
         for a in args:
-            row += web.tag(a,'td')+'\n'
-        self.tableBody += web.tag(row,'tr')
+            row += a
+        self.pageBody += web.tag(row,'div')
 
 
     def write(self, file=''):
@@ -44,9 +55,9 @@ class HTML(Top):
                 'JSMolPath' : self.settings.JSMolLocation,
                 'timestamp' : self.settings.timestamp,
                 'JMolPath'  : self.settings.JmolPath,
-                'TableBody' : self.tableBody,
-                'JMolWinX'  : self.settings.JmolWinX,
-                'JMolWinY'  : self.settings.JmolWinY,
+                'pageBody'  : self.pageBody,
+                'JMolWinX'  : self.settings.JMolWinX,
+                'JMolWinY'  : self.settings.JMolWinY,
             }
         self.s = self.s % d
 
