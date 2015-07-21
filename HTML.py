@@ -34,7 +34,7 @@ class HTML(Top):
         row = ''
         for a in args:
             row += a
-        self.pageBody += web.tag(row,'div')
+        self.pageBody += web.tag(row,'div',"class='row_wrapper'")
 
 
     def write(self, file=''):
