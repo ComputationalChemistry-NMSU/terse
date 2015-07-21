@@ -41,6 +41,7 @@ from Top import Top
 #DONE show NBO interactions
 #DONE Unfold menu with list of geoms to buttons
 #DONE Support JSmol
+#DONE Resize Jmol window
 
 # Top priority
 #TODO Add backup functionality
@@ -52,7 +53,6 @@ from Top import Top
 
 # To do next
 #TODO connectivity mode
-#TODO Resize Jmol window
 
 # Reimplement functionality:
 

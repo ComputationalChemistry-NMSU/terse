@@ -21,13 +21,13 @@ class HTML(Top):
     def addLeftDiv(self,*args):
         left_panel = ''
         for a in args:
-            left_panel += web.tag(a,'div',"id='left_panel'")+'\n'
+            left_panel += web.tag(a,'div',"class='left_panel'")+'\n'
         return left_panel
 
     def addRightDiv(self,*args):
         right_panel = ''
         for a in args:
-            right_panel += web.tag(a,'div',"id='right_panel'")+'\n'
+            right_panel += web.tag(a,'div',"class='right_panel'")+'\n'
         return right_panel
 
     def addDivRowWrapper(self,*args):
