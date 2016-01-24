@@ -4,22 +4,16 @@
             Terse results of electronic structure calculations
         </TITLE>
         <META http-equiv="Content-Type" content="text/html; Charset=UTF-8">
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmoljQuery.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolCore.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolApplet.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolApi.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolThree.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmolGLmol.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/j2sjmol.js"></script>
-        <script type="text/javascript" src="http://comp.chem.mu.edu/jsmol/js/JSmol.js"></script>
-     	<script src="http://code.jquery.com/jquery-1.11.4.js"></script>
+     	<script type="text/javascript" src="https://comp.chem.mu.edu/jsmol.new/JSmol.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.12.0.js"></script>
       	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
         <link rel="stylesheet" type="text/css" href="terse.css" />
         <script type="text/javascript">
-         $(function() {
+            Jmol._isAsync = false;
+            $(function() {
             $( ".left_panel" ).resizable({
-				aspectRatio: true
+				aspectRatio: true,
 			    minHeight: 325,
                 minWidth: 325
             });
@@ -28,12 +22,12 @@
         var Info = {
           width: '%(JMolWinX)s',
           height: '%(JMolWinY)s',
-          jarPath: 'jsmol',
-          jarFile: "JmolApplet.jar",
+          serverURL: "https://comp.chem.mu.edu/jsmol.new/php/jsmol.php",
+          j2sPath: "https://comp.chem.mu.edu/jsmol.new/j2s",
           use: "HTML5",
-          j2sPath: "http://comp.chem.mu.edu/jsmol/j2s",
           console: "jmolApplet0_infodiv",
-          debug: true
+          disableInitialConsole: false,
+          allowJavaScript: true,
         }
         </script>
     </HEAD>
