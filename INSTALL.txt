@@ -1,0 +1,8 @@
+ To install terse.py:
+   1. Install Jmol in webroot (just download and unpack it in some folder)
+   2. Download and unpack terse.py (https://github.com/talipovm/terse/archive/master.zip) one of the $PATH folder, e.g. ~/bin
+   3. Copy configuration file to home dir ~/.terse.rc
+   4. Copy terse.css file to home webroot
+   5. Modify configuration file ~/.terse.rc (The most important options are OutputFolder and JmolPath)
+   6. Install gnuplot (if not already installed) and add it's location to $PATH 
+

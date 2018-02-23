@@ -50,7 +50,8 @@ class Settings(Top):
         self.Engine3D = JSMol
         self.JSMolLocation = "http://comp.chem.mu.edu"
 
-        self.JmolWinX, self.JmolWinY = 800, 600
+        #self.JMolWinX, self.JMolWinY = 800, 600
+        self.JMolWinX, self.JMolWinY = '100%', '100%'
         self.JavaOptions = """vector ON; vector SCALE 3;\\
         set animationFPS 10;\\
         set measurementUnits pm;\\

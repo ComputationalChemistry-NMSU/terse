@@ -1,0 +1,19 @@
+.left_panel {
+    float:left; 
+    height:500px; 
+    width:500px; 
+    border:thin; 
+    border-style:solid; 
+    border-color:#000; 
+    margin-right:20px;
+}
+.right_panel {
+    overflow:hidden;
+} 
+.row_wrapper {
+    clear:both;
+    padding-bottom: 100px;
+    overflow:hidden;
+}
+
+

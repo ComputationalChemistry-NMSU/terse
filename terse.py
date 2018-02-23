@@ -41,6 +41,7 @@ from Top import Top
 #DONE show NBO interactions
 #DONE Unfold menu with list of geoms to buttons
 #DONE Support JSmol
+#DONE Resize Jmol window
 
 # Top priority
 #TODO Add backup functionality
@@ -52,7 +53,6 @@ from Top import Top
 
 # To do next
 #TODO connectivity mode
-#TODO Resize Jmol window
 
 # Reimplement functionality:
 
@@ -150,8 +150,9 @@ for fl in files:
     except settings.exc_type, e:
         log.error('Parsing %s failed!' % (str(fl)))
         continue
-
-    WebPage.addTableRow(str(f.file)+web.brn+b1,b2)
+    wb1 = WebPage.addLeftDiv(b1)
+    wb2 = WebPage.addRightDiv(b2)
+    WebPage.addDivRowWrapper(str(f.file)+web.brn+wb1,wb2)
 
     if settings.usage:
         f.usage()
@@ -161,6 +162,5 @@ for fl in files:
 
 # Remove cube files from terse-pics
 # IO.cleanCube(absolute_tersepic)
-
 WebPage.finalize()
 WebPage.write()
